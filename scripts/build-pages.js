@@ -3,7 +3,7 @@ const path = require("node:path");
 
 const projectRoot = path.resolve(__dirname, "..");
 const source = path.join(projectRoot, "public");
-const destination = path.resolve(projectRoot, "..", "docs");
+const destination = path.join(projectRoot, "docs");
 
 fs.rmSync(destination, { recursive: true, force: true });
 fs.cpSync(source, destination, { recursive: true });

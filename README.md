@@ -87,3 +87,11 @@ npm run build:pages
 ```
 
 Buyruq repository root'dagi `docs/` papkasini yaratadi. GitHub Pages source sifatida joriy branch va `/docs` tanlanadi. `404.html` SPA marshrutlari uchun nusxa, `.nojekyll` esa assetlarni o'zgartirmasdan uzatish uchun qo'shiladi. Edge Function slug: `newcastle-api`; uning `/db` va `/health` manzillari CORS orqali statik saytga xizmat qiladi.
+
+## Joriy joylash holati (2026-11-12)
+
+- **Sayt (frontend):** GitHub Pages — `main` branch, `/docs` papka. Manzil: https://valtrixlegend-bot.github.io/new-castle/
+- **API:** Supabase Edge Function `newcastle-api` (`/db`, `/health`), kodi: `supabase/functions/newcastle-api/index.ts`.
+- **Baza:** Supabase Postgres, `public.app_state` jadvali (loyiha: `newcastle-school`, region: ap-south-1).
+- Birinchi tashrifda demo baza `docs/data/demo-data.json` dan avtomatik ko'chadi.
+- O'zgarishlarni Pages'ga chiqarish: `npm run build:pages && mkdir -p docs/data && cp data/demo-data.json docs/data/` so'ng commit/push.

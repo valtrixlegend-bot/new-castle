@@ -9,7 +9,7 @@
     "dev": "node --watch server.js",
     "build:pages": "node scripts/build-pages.js",
     "test": "node --test tests/*.test.js",
-    "check": "node --check server.js && node --check api/db.js && node --check api/health.js && node --check lib/supabase-store.js && node --check public/assets/index-DKwGrC2V.js && node --check public/theme.js && node --check lib/attendance-alerts.js && node --check public/translation.js"
+    "check": "node --check server.js && node --check api/db.js && node --check api/health.js && node --check lib/supabase-store.js && node --check public/assets/index-DKwGrC2V.js && node --check public/theme.js && node --check public/db-sync.js && node --check lib/attendance-alerts.js && node --check public/translation.js"
   },
   "engines": {
     "node": ">=18"

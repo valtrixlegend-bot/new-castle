@@ -2,6 +2,7 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
+const { createHash } = require("node:crypto");
 
 const PORT = Number(process.env.PORT || 3000);
 const HOST = process.env.HOST || "127.0.0.1";
@@ -90,6 +91,8 @@ function readDB() {
   }
 }
 
+function dbRevision(payload) { return createHash("sha256").update(payload).digest("hex"); }
+
 function writeDB(text) {
   fs.mkdirSync(DATA_DIR, { recursive: true });
   const tmp = `${DB_FILE}.${process.pid}.tmp`;
@@ -164,7 +167,8 @@ async function handleRequest(req, res) {
 
   if (pathname === "/api/db") {
     if (req.method === "GET" || req.method === "HEAD") {
-      return sendJSON(res, 200, { payload: readDB() }, req.method);
+      const payload = readDB();
+      return sendJSON(res, 200, { payload, revision: dbRevision(payload) }, req.method);
     }
     if (req.method === "PUT") {
       const contentLength = Number(req.headers["content-length"] || 0);
@@ -191,8 +195,11 @@ async function handleRequest(req, res) {
         throw httpError(400, "payload ichidagi baza JSON formati noto'g'ri");
       }
       const normalized = normalizeDB(parsed);
-      writeDB(JSON.stringify(normalized));
-      return sendJSON(res, 200, { ok: true });
+      if (typeof body.revision !== "string") throw httpError(428, "Baza versiyasi kerak. Sahifani yangilang.");
+      if (body.revision !== dbRevision(readDB())) throw httpError(409, "Baza o‘zgargan. Sahifani yangilang.");
+      const payload = JSON.stringify(normalized);
+      writeDB(payload);
+      return sendJSON(res, 200, { ok: true, revision: dbRevision(payload) });
     }
     res.setHeader("Allow", "GET, HEAD, PUT");
     return sendJSON(res, 405, { ok: false, error: "Metod ruxsat etilmagan" }, req.method);

@@ -87,10 +87,10 @@ test("PUT bazani saqlaydi va keyingi GET da saqlangan ma'lumot qaytadi", async (
   const saved = await fetch(`${base}/api/db`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ payload: JSON.stringify(db) }),
+    body: JSON.stringify({ payload: JSON.stringify(db), revision: original.revision }),
   });
   assert.equal(saved.status, 200);
-  assert.deepEqual(await saved.json(), { ok: true });
+  assert.equal((await saved.json()).ok, true);
 
   const loaded = await (await fetch(`${base}/api/db`)).json();
   const stored = JSON.parse(loaded.payload);
@@ -167,10 +167,23 @@ test("o'quvchi va ustoz guruhga bog'lanib, bazada saqlanadi", async () => {
   db.users.push({ id: 'test-teacher', username: 'test-teacher', password: 'test', role: 'teacher', fullName: 'Sinov ustoz', subjects: ['Matematika'], createdAt: stamp });
   db.users.push({ id: 'test-student', username: 'test-student', password: 'test', role: 'student', fullName: 'Sinov o‘quvchi', coins: 0, createdAt: stamp });
   db.groups.push({ id: 'test-group', name: 'Sinov guruhi', subject: 'Matematika', teacherId: 'test-teacher', studentIds: ['test-student'], monthlyFee: 0, createdAt: stamp });
-  const saved = await fetch(`${base}/api/db`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ payload: JSON.stringify(db) }) });
+  const saved = await fetch(`${base}/api/db`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ payload: JSON.stringify(db), revision: original.revision }) });
   assert.equal(saved.status, 200);
   const loaded = JSON.parse((await (await fetch(`${base}/api/db`)).json()).payload);
   const group = loaded.groups.find(g => g.id === 'test-group');
   assert.equal(loaded.users.find(u => u.id === group.teacherId).role, 'teacher');
   assert.equal(loaded.users.find(u => u.id === group.studentIds[0]).role, 'student');
+});
+
+test('eskirgan va versiyasiz saqlash mavjud ma’lumotni bosib ketmaydi', async () => {
+  const initial = await (await fetch(`${base}/api/db`)).json();
+  const a = JSON.parse(initial.payload), b = JSON.parse(initial.payload);
+  a.messages.push({id:'concurrency-first'}); b.messages.push({id:'concurrency-stale'});
+  const save = body => fetch(`${base}/api/db`, {method:'PUT', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)});
+  assert.equal((await save({payload:JSON.stringify(a), revision:initial.revision})).status, 200);
+  assert.equal((await save({payload:JSON.stringify(b), revision:initial.revision})).status, 409);
+  assert.equal((await save({payload:JSON.stringify(b)})).status, 428);
+  const latest = JSON.parse((await (await fetch(`${base}/api/db`)).json()).payload);
+  assert(latest.messages.some(x => x.id === 'concurrency-first'));
+  assert(!latest.messages.some(x => x.id === 'concurrency-stale'));
 });

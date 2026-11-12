@@ -40,3 +40,10 @@ Sinovlar mahalliy, alohida demo bazada o'tkazilgan. Internetdagi bazaga sinov ma
 - Qo'shimcha tasdiqlashlar: davomat, support yozilish/bekor qilish/holat va davomat, vazifa natijasini belgilash, coin qo'shish/olish va xarid, to'lov holati/izohi/so'rovi, hamda yangi testdagi savolni o'chirish. Avtomatik o'qildi bildirishnomalari va oddiy navigatsiyaga tasdiqlash chiqarilmaydi.
 - Brauzerda davomat va to'lov holati uchun bekor qilish bazani o'zgartirmasligi, tasdiqlash esa o'zgarishni saqlashi tekshirildi. Qolgan yangi qo'shilgan tasdiqlashlarning barcha holatlari brauzerda alohida tekshirilmagan. Support brauzer sinovi tanlangan vaqt endi ko'rinmagani sabab tugamadi.
 - Kod darajasidagi 10 qo'shimcha tasdiqlash guard testi bilan jami 41 avtomatik test o'tdi; bu kod mavjudligini tekshiradi, to'liq brauzer qamrovi emas.
+
+## Bir vaqtning o'zida saqlashdan himoya
+
+- Demo API bazaning versiyasini GET bilan beradi va PUT faqat o'sha versiya hali amaldagi bo'lsa qabul qilinadi. Eski yoki versiyasiz yozuv rad etiladi. Admin tomonidan bazaga bevosita kiritilgan o'zgarishlar ham versiyani yangilaydi.
+- Bitta oynadagi yozuvlar navbat bilan yuboriladi. Ziddiyat yoki saqlash javobi noaniq bo'lsa, keyingi saqlashlar to'xtatiladi va foydalanuvchiga sahifani yangilash haqida ogohlantirish beriladi. Saqlanmagan o'zgarishlarni yangilashdan keyin qayta kiritish kerak; ular avtomatik birlashtirilmaydi.
+- Mahalliy brauzerda ikki ochiq oyna bilan sinov: birinchi to'lov saqlandi, ikkinchisining eski nusxasi rad etildi va ogohlantirish ko'rsatildi. Barcha 14 pilot login nusxada tekshirildi. Jonli Netlify funksiyasi orqali yozish va ikki foydalanuvchi sinovi hali tekshirilmagan.
+- Bu himoya autentifikatsiya emas: umumiy demo API hali ham hammaga ochiq; haqiqiy shaxsiy ma'lumotlar uchun xavfsiz emas. Muddati tugaganda bazalar avtomatik o'chirilmaydi.

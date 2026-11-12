@@ -15,3 +15,18 @@ test('Netlify proxy xatolarni va demo muddati tugashini qaytaradi', async t => {
   assert.equal((await handler({httpMethod:'GET'})).statusCode, 410);
   assert.equal((await handler({httpMethod:'DELETE'})).statusCode, 405);
 });
+test('classic va pilot saytlar faqat o‘zlariga ajratilgan bazaga ulanadi', async t => {
+  const old = process.env.NEWCASTLE_DEMO;
+  t.after(() => { if (old === undefined) delete process.env.NEWCASTLE_DEMO; else process.env.NEWCASTLE_DEMO = old; });
+  const urls = [];
+  t.mock.method(globalThis, 'fetch', async url => { urls.push(url); return new Response('{}', { status: 200 }); });
+  delete process.env.NEWCASTLE_DEMO;
+  assert.equal((await handler({httpMethod:'GET'})).statusCode, 200);
+  process.env.NEWCASTLE_DEMO = 'classic';
+  assert.equal((await handler({httpMethod:'GET'})).statusCode, 200);
+  process.env.NEWCASTLE_DEMO = 'unknown';
+  assert.equal((await handler({httpMethod:'GET'})).statusCode, 503);
+  assert.match(urls[0], /newcastle-48h-demo$/);
+  assert.match(urls[1], /newcastle-classic-demo$/);
+  assert.equal(urls.length, 2);
+});

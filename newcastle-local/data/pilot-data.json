@@ -1,0 +1,168 @@
+{
+  "users": [
+    {
+      "id": "pilot_admin",
+      "username": "pilot_admin",
+      "password": "Pilot-Admin-2026",
+      "role": "admin",
+      "fullName": "Sinov admin",
+      "createdAt": "2026-11-11T00:00:00.000Z"
+    },
+    {
+      "id": "pilot_teacher",
+      "username": "pilot_ustoz",
+      "password": "Pilot-Ustoz-2026",
+      "role": "teacher",
+      "fullName": "Sinov ustoz",
+      "subjects": [
+        "Matematika"
+      ],
+      "supportTeacher": true,
+      "createdAt": "2026-11-11T00:00:00.000Z"
+    },
+    {
+      "id": "pilot_student01",
+      "username": "pilot01",
+      "password": "Pilot-01-2026",
+      "role": "student",
+      "fullName": "Sinov o‘quvchi 01",
+      "coins": 0,
+      "createdAt": "2026-11-11T00:00:00.000Z"
+    },
+    {
+      "id": "pilot_student02",
+      "username": "pilot02",
+      "password": "Pilot-02-2026",
+      "role": "student",
+      "fullName": "Sinov o‘quvchi 02",
+      "coins": 0,
+      "createdAt": "2026-11-11T00:00:00.000Z"
+    },
+    {
+      "id": "pilot_student03",
+      "username": "pilot03",
+      "password": "Pilot-03-2026",
+      "role": "student",
+      "fullName": "Sinov o‘quvchi 03",
+      "coins": 0,
+      "createdAt": "2026-11-11T00:00:00.000Z"
+    },
+    {
+      "id": "pilot_student04",
+      "username": "pilot04",
+      "password": "Pilot-04-2026",
+      "role": "student",
+      "fullName": "Sinov o‘quvchi 04",
+      "coins": 0,
+      "createdAt": "2026-11-11T00:00:00.000Z"
+    },
+    {
+      "id": "pilot_student05",
+      "username": "pilot05",
+      "password": "Pilot-05-2026",
+      "role": "student",
+      "fullName": "Sinov o‘quvchi 05",
+      "coins": 0,
+      "createdAt": "2026-11-11T00:00:00.000Z"
+    },
+    {
+      "id": "pilot_student06",
+      "username": "pilot06",
+      "password": "Pilot-06-2026",
+      "role": "student",
+      "fullName": "Sinov o‘quvchi 06",
+      "coins": 0,
+      "createdAt": "2026-11-11T00:00:00.000Z"
+    },
+    {
+      "id": "pilot_student07",
+      "username": "pilot07",
+      "password": "Pilot-07-2026",
+      "role": "student",
+      "fullName": "Sinov o‘quvchi 07",
+      "coins": 0,
+      "createdAt": "2026-11-11T00:00:00.000Z"
+    },
+    {
+      "id": "pilot_student08",
+      "username": "pilot08",
+      "password": "Pilot-08-2026",
+      "role": "student",
+      "fullName": "Sinov o‘quvchi 08",
+      "coins": 0,
+      "createdAt": "2026-11-11T00:00:00.000Z"
+    },
+    {
+      "id": "pilot_student09",
+      "username": "pilot09",
+      "password": "Pilot-09-2026",
+      "role": "student",
+      "fullName": "Sinov o‘quvchi 09",
+      "coins": 0,
+      "createdAt": "2026-11-11T00:00:00.000Z"
+    },
+    {
+      "id": "pilot_student10",
+      "username": "pilot10",
+      "password": "Pilot-10-2026",
+      "role": "student",
+      "fullName": "Sinov o‘quvchi 10",
+      "coins": 0,
+      "createdAt": "2026-11-11T00:00:00.000Z"
+    },
+    {
+      "id": "pilot_student11",
+      "username": "pilot11",
+      "password": "Pilot-11-2026",
+      "role": "student",
+      "fullName": "Sinov o‘quvchi 11",
+      "coins": 0,
+      "createdAt": "2026-11-11T00:00:00.000Z"
+    },
+    {
+      "id": "pilot_student12",
+      "username": "pilot12",
+      "password": "Pilot-12-2026",
+      "role": "student",
+      "fullName": "Sinov o‘quvchi 12",
+      "coins": 0,
+      "createdAt": "2026-11-11T00:00:00.000Z"
+    }
+  ],
+  "homework": [],
+  "submissions": [],
+  "grades": [],
+  "examTopics": [],
+  "shopItems": [],
+  "purchases": [],
+  "groups": [
+    {
+      "id": "pilot_group",
+      "name": "Sinov guruhi",
+      "subject": "Matematika",
+      "teacherId": "pilot_teacher",
+      "studentIds": [
+        "pilot_student01",
+        "pilot_student02",
+        "pilot_student03",
+        "pilot_student04",
+        "pilot_student05",
+        "pilot_student06",
+        "pilot_student07",
+        "pilot_student08",
+        "pilot_student09",
+        "pilot_student10",
+        "pilot_student11",
+        "pilot_student12"
+      ],
+      "monthlyFee": 0,
+      "createdAt": "2026-11-11T00:00:00.000Z"
+    }
+  ],
+  "payments": [],
+  "paymentRequests": [],
+  "supportSlots": [],
+  "mainAttendance": [],
+  "notifications": [],
+  "messages": []
+}

@@ -1,0 +1,61 @@
+/* Theme control is outside the React root so it is available on every screen. */
+#theme-toggle {
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top));
+  right: max(12px, env(safe-area-inset-right));
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: #e5e7eb;
+  color: #222733;
+  cursor: pointer;
+  box-shadow: 0 2px 10px #0002;
+}
+#theme-toggle:hover { filter: brightness(.92); }
+#theme-toggle:focus-visible { outline: 3px solid #e8a23d; outline-offset: 3px; }
+#theme-toggle svg { width: 20px; height: 20px; }
+#theme-toggle .theme-sun { display: none; }
+html[data-theme="dark"] #theme-toggle { background: #303238; color: #f3f4f6; }
+html[data-theme="dark"] #theme-toggle .theme-sun { display: block; }
+html[data-theme="dark"] #theme-toggle .theme-moon { display: none; }
+/* Leave room for the fixed control beside the app's header actions. */
+#root .flex-none.flex.items-center.justify-between.px-4.py-3.bg-white.border-b { padding-right: 66px; }
+
+html[data-theme="dark"] { background: #111318; color: #e7e9ee; }
+html[data-theme="dark"] body { background: #111318; color: #e7e9ee; }
+html[data-theme="dark"] .bg-white,
+html[data-theme="dark"] .md\:bg-white { background-color: #20242c; }
+html[data-theme="dark"] .bg-gray-50 { background-color: #151820; }
+html[data-theme="dark"] .bg-gray-100 { background-color: #2b303a; }
+html[data-theme="dark"] .bg-gray-300 { background-color: #505866; }
+html[data-theme="dark"] .bg-brand-50,
+html[data-theme="dark"] .bg-brand-100 { background-color: #273047; }
+html[data-theme="dark"] .bg-amber-50,
+html[data-theme="dark"] .bg-amber-100 { background-color: #3a3022; }
+html[data-theme="dark"] .bg-blue-50,
+html[data-theme="dark"] .bg-blue-100 { background-color: #25334a; }
+html[data-theme="dark"] .bg-emerald-50,
+html[data-theme="dark"] .bg-emerald-100 { background-color: #203b34; }
+html[data-theme="dark"] :is(.text-gray-900,.text-gray-800,.text-gray-700) { color: #e7e9ee; }
+html[data-theme="dark"] :is(.text-gray-600,.text-gray-500,.text-gray-400,.text-gray-300) { color: #b1bac8; }
+html[data-theme="dark"] :is(.text-brand-800,.text-brand-700,.text-brand-600,.text-brand-500) { color: #aebfe7; }
+html[data-theme="dark"] :is(.text-amber-800,.text-amber-700,.text-amber-600) { color: #f6c671; }
+html[data-theme="dark"] :is(.text-emerald-800,.text-emerald-700,.text-emerald-600) { color: #88d8b0; }
+html[data-theme="dark"] :is(.text-blue-800,.text-blue-700,.text-blue-600) { color: #9fc5ff; }
+html[data-theme="dark"] :is(.border-gray-50,.border-gray-100,.border-gray-200,.border-gray-300,.border-brand-100,.border-brand-200,.border-brand-300) { border-color: #3c4350; }
+html[data-theme="dark"] :is(.border-amber-100,.border-amber-200,.border-amber-300) { border-color: #705832; }
+html[data-theme="dark"] :is(.border-emerald-100,.border-emerald-200,.border-emerald-300) { border-color: #386456; }
+html[data-theme="dark"] :is(.border-blue-100,.border-blue-200) { border-color: #405d7c; }
+html[data-theme="dark"] :is(.from-white,.from-brand-50) { --tw-gradient-from: #242b39; }
+html[data-theme="dark"] :is(.to-brand-50,.to-brand-100) { --tw-gradient-to: #202b40; }
+html[data-theme="dark"] .from-amber-50 { --tw-gradient-from: #3a3022; }
+html[data-theme="dark"] .to-amber-100 { --tw-gradient-to: #453522; }
+html[data-theme="dark"] :is(input,select,textarea) { color: #e7e9ee; }
+html[data-theme="dark"] :is(input,textarea)::placeholder { color: #a4adba; }
+@media (hover:hover) {
+  html[data-theme="dark"] :is(.hover\:bg-gray-50,.hover\:bg-gray-100,.hover\:bg-gray-200,.hover\:bg-brand-50,.hover\:bg-brand-100):hover { background-color: #38404e; }
+}

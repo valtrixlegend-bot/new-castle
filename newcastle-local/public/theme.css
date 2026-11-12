@@ -63,10 +63,10 @@ html[data-theme="dark"] :is(input,textarea)::placeholder { color: #a4adba; }
 /* Refined surfaces and motion, shared by every role and both themes. */
 :root { --ns-surface-shadow: 0 4px 18px rgba(31, 49, 79, .055); --ns-hover-shadow: 0 12px 28px rgba(31, 49, 79, .11); }
 html[data-theme="dark"] { --ns-surface-shadow: 0 5px 18px rgba(4, 10, 21, .18); --ns-hover-shadow: 0 14px 30px rgba(4, 10, 21, .28); }
-#root .ns-root { background: #f3f6fb; }
-#root .ns-root > div { background: #f8fafd; }
-html[data-theme="dark"] #root .ns-root { background: #111824; }
-html[data-theme="dark"] #root .ns-root > div { background: #161e2b; }
+#root > .ns-root { background: #f3f6fb; }
+#root > .ns-root > div { background: #f8fafd; }
+html[data-theme="dark"] #root > .ns-root { background: #111824; }
+html[data-theme="dark"] #root > .ns-root > div { background: #161e2b; }
 #root .bg-white.rounded-2xl.border { box-shadow: var(--ns-surface-shadow); transition: box-shadow .22s ease, border-color .22s ease, transform .22s ease; }
 html[data-theme="dark"] #root .bg-white.rounded-2xl.border { background-color: #202b3b; border-color: #324256; }
 #root .ns-tap, #theme-toggle { transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, color .18s ease; }

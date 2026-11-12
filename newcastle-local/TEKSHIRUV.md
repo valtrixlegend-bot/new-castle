@@ -1,0 +1,42 @@
+# Sinov natijalari
+
+Sinovlar mahalliy, alohida demo bazada o'tkazilgan. Internetdagi bazaga sinov ma'lumotlari yozilmagan.
+
+## Brauzerda tekshirilgan yo'llar
+
+- Admin, o'qituvchi, o'quvchi, ota-ona va yordamchi admin bilan kirish; asosiy bo'limlarni ochish.
+- Admin: hisob yaratish, qidirish, rol filtrlari, guruh yaratish va o'qituvchi/o'quvchini bog'lash, bo'sh guruh nomi validatsiyasi.
+- O'qituvchi davomat saqlashi va o'quvchi shu davomatni ko'rishi.
+- O'qituvchi matnli vazifa berishi, o'quvchi yuborishi, ustoz tekshirib coin berishi.
+- O'quvchi xabar yuborishi va yordamchi admin javob berishi; xabar bildirishnomalari admin va yordamchiga tushishi.
+- O'quvchi coin bilan mahsulot olishi; support vaqtini ochish, so'rov yuborish va ustoz qabul qilishi.
+- Ota-ona farzandlar o'rtasida o'tishi va to'lov so'rovi yuborishi; admin uni tasdiqlashi. Bu haqiqiy pul o'tkazmasi emas.
+- Mobil ko'rinish, tema almashtirish va vazifa matnini tanlab tarjima oynasini ochish/yopish (tarjima javobi brauzer sinovida mock qilingan).
+
+## Avtomatlashtirilgan testlar
+
+`npm run check` va `npm test` — 31 ta test o'tdi. Netlify va tarjima integratsiyalarida tarmoq javoblari mock qilingan.
+
+## Cheklovlar
+
+- Har bir tugma, kombinatsiya va fayl yuklash holati to'liq tekshirilmagan; bu ro'yxat to'liq qamrov yoki xatosizlik kafolati emas.
+- MyMemory xizmatiga real so'rov yuborildi: `good morning` uchun to'g'ri javob keldi, `salom` uchun esa noto'g'ri javob qaytdi. Xizmat sifati va mavjudligi kafolatlanmaydi.
+- Butun JSON bazani har saqlashda almashtirish sababli bir vaqtdagi foydalanuvchilar o'zgarishlari yo'qolishi mumkin; server tomonidagi autentifikatsiya va huquqlar mavjud emas.
+- Telegram xabarlari ulanmagan; Netlify'ga real deployment va real Netlify server funksiyalari tekshirilmagan.
+- Demo bazasining amal muddati 2026-11-14 15:43 UTC gacha. Shundan so'ng o'qish/yozish ishlamaydi.
+
+## Qo'shimcha tekshiruv
+
+- O'qituvchi faylli, rasmli va besh savolli test vazifasini yaratdi; o'quvchi fayl va rasm yubordi va testni to'ldirdi. Test 100% deb saqlandi.
+- Bo'sh sarlavha va 800 KB dan katta fayl validatsiyasi tekshirildi.
+- Admin sinov hisobini tahrirladi va o'chirdi; band login rad qilindi.
+- O'quvchi support so'rovini bekor qildi, keyingi so'rovni ustoz rad etdi; vaqt qayta ochildi.
+- Inglizcha rejim alohida tekshirildi: asosiy navigatsiya tarjima qilinadi, lekin hisob yaratish oynasi o'zbekcha qolmoqda. Butun interfeys tarjimasi hali tugallanmagan.
+- Ba'zi ikonka tugmalarida matnli accessibility yorliqlari yo'q. Har bir ekran, tugma va barcha kombinatsiyalar hali qamrab olinmagan.
+- Sinovda ustozni o'chirish uning guruhi va vazifalarini egasiz qoldirishi aniqlandi. Bog'langan guruh yoki dars yozuvlari mavjud ustoz hisobini o'chirishga qarshi himoya qo'shildi va brauzerda tekshirildi. Bu himoya mavjud eski yetim yozuvlarni avtomatik tiklamaydi.
+- Qo'shimcha: admin do'konda sinov mahsuloti nomi va narxini tahrirlab saqladi, so'ng o'chirdi; ikkala o'zgarish alohida mahalliy bazada tekshirildi. O'chirish alohida tasdiqlash oynasisiz darhol bajarildi.
+- Admin alohida mahalliy bazada bo'sh sinov guruhini yaratdi, nomi va oylik summasini o'zgartirdi va o'chirdi; natijalar bazada tekshirildi. O'chirish tasdiqlash oynasisiz bajarildi. Bog'langan davomat yoki vazifalari bor guruhni o'chirish holati hali tekshirilmagan.
+- Guruh va mahsulotni tahrirlash/o'chirishda, hisobni tahrirlashda va alohida xabarni o'chirishda tasdiqlash qo'shildi. Hisob va suhbatni o'chirishda tasdiqlash avval ham bor edi. Guruh hamda mahsulot uchun tasdiqlash va rad etish brauzerda bazaga ta'siri bilan tekshirildi. Boshqa barcha o'zgartirish va o'chirish amallari hali to'liq qamrab olinmagan.
+- Qo'shimcha tasdiqlashlar: davomat, support yozilish/bekor qilish/holat va davomat, vazifa natijasini belgilash, coin qo'shish/olish va xarid, to'lov holati/izohi/so'rovi, hamda yangi testdagi savolni o'chirish. Avtomatik o'qildi bildirishnomalari va oddiy navigatsiyaga tasdiqlash chiqarilmaydi.
+- Brauzerda davomat va to'lov holati uchun bekor qilish bazani o'zgartirmasligi, tasdiqlash esa o'zgarishni saqlashi tekshirildi. Qolgan yangi qo'shilgan tasdiqlashlarning barcha holatlari brauzerda alohida tekshirilmagan. Support brauzer sinovi tanlangan vaqt endi ko'rinmagani sabab tugamadi.
+- Kod darajasidagi 10 qo'shimcha tasdiqlash guard testi bilan jami 41 avtomatik test o'tdi; bu kod mavjudligini tekshiradi, to'liq brauzer qamrovi emas.

@@ -19,3 +19,7 @@ test('demo tabida sahifa yangilanganda hisob eslanadi, chiqishda tozalanadi', ()
 test('boshqa hostlarda demo sessiya faollashmaydi', () => {
   const page = browser('example.com'); page.set('admin'); assert.equal(page.get(), null);
 });
+
+test('Netlify demo oynasida hisob saqlanadi', () => {
+  const page = browser('sinov.netlify.app'); page.set('student1'); assert.equal(page.get(), 'student1');
+});

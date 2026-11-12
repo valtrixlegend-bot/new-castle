@@ -1,0 +1,12 @@
+# Deploy this repository through Netlify's Git build, not drag-and-drop.
+[build]
+  publish = "docs"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/api/db"
+  to = "/.netlify/functions/demo-db"
+  status = 200

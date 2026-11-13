@@ -45,3 +45,11 @@ test('group details and editing provide English search and action labels', () =>
   assert.match(edit, /Save changes to this group\?/);
   assert.match(edit, /__uiTranslate\(`Saqlash`,`Save`\)/);
 });
+
+test('English interface includes translated attendance, support and confirmations', () => {
+  const js = read('assets/index-DKwGrC2V.js');
+  for (const text of ['Save attendance?', 'Change this payment status?', 'Open selected slots', 'Sunday', 'Monday', 'Save failed. Check your connection']) {
+    assert.ok(js.includes(text), `missing English text: ${text}`);
+  }
+  assert.match(js, /function AO\(e,lang\)/);
+});

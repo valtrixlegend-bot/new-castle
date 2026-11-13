@@ -73,3 +73,9 @@ Sinovlar mahalliy, alohida demo bazada o'tkazilgan. Internetdagi bazaga sinov ma
 
 - Guruh tafsilotlari qidiruvi va natijasi, guruh tahriri/yaratish tugmalari, hamda hisob, to'lov izohi va mahsulot oynalaridagi saqlash/qo'shish tugmalari inglizchaga tarjima qilindi.
 - Alohida mahalliy bazada inglizcha guruh qidiruvi, tahrirlashda bekor qilish va tasdiqlab saqlash hamda boshqa oynalardagi inglizcha tugmalar brauzerda tekshirildi. `npm run check` va 50 ta avtomatik test o'tdi. Qolgan barcha tarjimalar va jonli brauzer tekshiruvi hali to'liq emas.
+
+## Inglizcha matnlar va jonli brauzer holati
+
+- Menyu, davomat, support, vazifa, to'lov, hisob va bildirishnomalardagi qo'shimcha yozuvlar, tasdiqlashlar, xatoliklar va hafta kunlari ingliz tiliga o'tkazildi. Foydalanuvchilar kiritgan ismlar, xabarlar va vazifa mazmuni avtomatik o'zgartirilmaydi.
+- Mahalliy alohida bazada besh rolda inglizcha asosiy navigatsiya, guruh qidirish/tahrirlash, tasdiqlashni bekor qilish va saqlash, fayl/rasm/test vazifalari va to'lov tasdiqlashi tekshirildi. `npm run check` va 51 ta avtomatik test o'tdi. Bu barcha mumkin bo'lgan ma'lumot va holatlar to'liq qamrab olinganini anglatmaydi.
+- Ikkala Netlify domenini shu muhitdagi Chromium orqali ochish yana `ERR_CONNECTION_CLOSED` bilan muvaffaqiyatsiz tugadi. Jonli brauzer testi shu sabab bajarilmadi; foydalanuvchi brauzerida alohida tekshirish zarur. Sinov jonli bazaga yozmadi.

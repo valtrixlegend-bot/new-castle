@@ -89,3 +89,19 @@ html[data-theme="dark"] #root .bg-white.rounded-2xl.border { background-color: #
 @media (prefers-reduced-motion: reduce) {
   #root *, #theme-toggle { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
+
+/* Homework recipients are organized by the teacher's groups. */
+.homework-groups { display: flex; flex-direction: column; gap: 8px; }
+.homework-group { border: 1px solid #d7deea; border-radius: 12px; overflow: hidden; }
+.homework-group summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px; cursor: pointer; font-size: 14px; font-weight: 600; background: #f3f6fb; }
+.homework-group summary::after { content: '▾'; flex: none; }
+.homework-group[open] summary::after { content: '▴'; }
+.homework-group-count { margin-left: auto; font-size: 12px; font-weight: 400; color: #65748b; }
+.homework-group-students { display: flex; flex-direction: column; gap: 10px; padding: 12px; }
+.homework-group-students label { display: flex; align-items: center; gap: 10px; font-size: 14px; cursor: pointer; }
+.homework-group-students input { width: 16px; height: 16px; flex: none; accent-color: #3f5074; }
+.homework-select-all { font-weight: 600; padding-bottom: 9px; border-bottom: 1px solid #d7deea; }
+html[data-theme="dark"] .homework-group { border-color: #3c4350; }
+html[data-theme="dark"] .homework-group summary { background: #273047; }
+html[data-theme="dark"] .homework-group-count { color: #b1bac8; }
+html[data-theme="dark"] .homework-select-all { border-color: #3c4350; }

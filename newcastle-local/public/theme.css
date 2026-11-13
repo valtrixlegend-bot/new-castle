@@ -82,7 +82,8 @@ html[data-theme="dark"] #root .bg-white.rounded-2xl.border { background-color: #
   #root .ns-tap:active, #theme-toggle:active { transform: scale(.97); }
   #root .ns-in { animation: ns-soft-enter .3s ease-out both; }
   #root .ns-pop { animation: ns-soft-fade .2s ease-out both; }
-  @keyframes ns-soft-enter { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
+  /* Avoid transforms on page containers: they trap positioned dialogs inside short content. */
+  @keyframes ns-soft-enter { from { opacity: 0; } to { opacity: 1; } }
   @keyframes ns-soft-fade { from { opacity: 0; } to { opacity: 1; } }
 }
 @media (prefers-reduced-motion: reduce) {

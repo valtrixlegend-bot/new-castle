@@ -68,3 +68,8 @@ Sinovlar mahalliy, alohida demo bazada o'tkazilgan. Internetdagi bazaga sinov ma
 - Mahalliy bazada to'lov holati va guruh tahriri/o'chirilishi uchun tasdiqlashni bekor qilish hamda qabul qilish natijalari tekshirildi.
 - Inglizcha navigatsiya besh rolda qayta ochildi, brauzer JavaScript xatosi kuzatilmadi. Kamida guruh tafsilotidagi qidiruv va ayrim saqlash tugmalari inglizcha rejimda ham o'zbekcha qoladi; barcha tugmalar, ekranlar va tarjimalar hali to'liq tekshirilmagan.
 - `npm run check` va 49 avtomatik test o'tdi.
+
+## Guruh oynasi va saqlash tarjimasi
+
+- Guruh tafsilotlari qidiruvi va natijasi, guruh tahriri/yaratish tugmalari, hamda hisob, to'lov izohi va mahsulot oynalaridagi saqlash/qo'shish tugmalari inglizchaga tarjima qilindi.
+- Alohida mahalliy bazada inglizcha guruh qidiruvi, tahrirlashda bekor qilish va tasdiqlab saqlash hamda boshqa oynalardagi inglizcha tugmalar brauzerda tekshirildi. `npm run check` va 50 ta avtomatik test o'tdi. Qolgan barcha tarjimalar va jonli brauzer tekshiruvi hali to'liq emas.

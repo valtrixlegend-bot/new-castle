@@ -60,3 +60,11 @@ Sinovlar mahalliy, alohida demo bazada o'tkazilgan. Internetdagi bazaga sinov ma
 - O'quvchi support, to'lov, coin; ustoz vazifa, davomat, support; admin hisob, guruh va xabar oynalaridagi 126 ta qo'shimcha matn ingliz tiliga o'tkazildi. Ayrim dinamik xabarlar, tugmalar, tasdiqlar va boshqa matnlar hali o'zbekcha bo'lishi mumkin: to'liq tarjima deb hisoblanmaydi.
 - Mahalliy izolyatsiyalangan demo bazada o'zbekcha admin, ustoz va o'quvchining asosiy navigatsiyasi, inglizchada esa admin, ustoz, o'quvchi, ota-ona va yordamchi admin navigatsiyasi ochildi; brauzerda JavaScript xatolari kuzatilmadi. Bu barcha tugmalar, barcha holatlar yoki jonli sayt testi emas.
 - Jonli saytning statik fayllari tekshirildi, lekin ushbu o'zgarishlar jonli brauzerda hali sinovdan o'tmagan. Sinovlar foydalanuvchilarning jonli bazasiga yozmadi.
+
+## So'nggi qo'shimcha tekshiruv
+
+- Ikkala Netlify saytidan yangi tarjima kodi kelayotgani statik JavaScript orqali ko'rildi. Jonli saytlarni bu muhitdagi Chromium bilan ochish `ERR_CONNECTION_CLOSED` berdi, shuning uchun jonli brauzerda kirish yoki tugmalar tekshirilmagan.
+- Alohida mahalliy bazada ustoz faylli, rasmli va besh savolli test vazifasini guruhga berdi; har biri bazada saqlangani ko'rildi. O'quvchi testni topshirdi va 100% natija qayd etildi.
+- Mahalliy bazada to'lov holati va guruh tahriri/o'chirilishi uchun tasdiqlashni bekor qilish hamda qabul qilish natijalari tekshirildi.
+- Inglizcha navigatsiya besh rolda qayta ochildi, brauzer JavaScript xatosi kuzatilmadi. Kamida guruh tafsilotidagi qidiruv va ayrim saqlash tugmalari inglizcha rejimda ham o'zbekcha qoladi; barcha tugmalar, ekranlar va tarjimalar hali to'liq tekshirilmagan.
+- `npm run check` va 49 avtomatik test o'tdi.

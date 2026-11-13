@@ -10,7 +10,7 @@ for (const [name, pattern] of [
   ['group deletion', /function d\(e\)\{if\(!window\.confirm\(`Guruhni o'chirish/],
   ['product deletion', /function c\(e\)\{if\(!window\.confirm\(`Mahsulotni o'chirish/],
   ['message deletion', /function S\(e\)\{c&&window\.confirm\(`Xabarni o'chirish/],
-  ['group editing', /if\(t&&!window\.confirm\(`Guruhdagi o'zgarishlarni/],
+  ['group editing', /if\(t&&!window\.confirm\(__uiTranslate\(`Guruhdagi o'zgarishlarni/],
   ['product editing', /e&&!window\.confirm\(`Mahsulotdagi o'zgarishlarni/],
   ['account editing', /if\(!window\.confirm\(`Hisobdagi o'zgarishlarni/],
   ['attendance saving', /if\(!window\.confirm\(`Davomatni saqlash/],

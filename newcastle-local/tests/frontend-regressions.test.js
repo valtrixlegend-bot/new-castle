@@ -35,3 +35,13 @@ test('common role-specific labels are available in English', () => {
     assert.ok(js.includes(JSON.stringify(label)), `missing English label: ${label}`);
   }
 });
+
+test('group details and editing provide English search and action labels', () => {
+  const js = read('assets/index-DKwGrC2V.js');
+  const details = js.slice(js.indexOf('function Kk('), js.indexOf('function qk('));
+  const edit = js.slice(js.indexOf('function qk('), js.indexOf('function Jk('));
+  assert.match(details, /Search by name\.\.\./);
+  assert.match(details, /No students found/);
+  assert.match(edit, /Save changes to this group\?/);
+  assert.match(edit, /__uiTranslate\(`Saqlash`,`Save`\)/);
+});

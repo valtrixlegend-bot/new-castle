@@ -28,3 +28,10 @@ test('account creation has English labels and a confirmation', () => {
   assert.match(section, /`To'liq ism`,`Full name`/);
   assert.match(section, /Yangi hisob yaratishni tasdiqlaysizmi/);
 });
+
+test('common role-specific labels are available in English', () => {
+  const js = read('assets/index-DKwGrC2V.js');
+  for (const label of ['My bookings', 'Mark attendance', 'Payment history', 'Edit account', 'Group name', 'No messages yet']) {
+    assert.ok(js.includes(JSON.stringify(label)), `missing English label: ${label}`);
+  }
+});

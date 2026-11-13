@@ -54,3 +54,9 @@ Sinovlar mahalliy, alohida demo bazada o'tkazilgan. Internetdagi bazaga sinov ma
 - Vazifa berish va yangi hisob yaratishga tasdiqlash qo'shildi. Inglizcha hisob yaratish va vazifa oynalaridagi bir qator asosiy matnlar tarjima qilindi; qolgan sahifalar hali to'liq tarjima qilinmagan.
 - Alohida mahalliy bazada admin, ustoz va o'quvchi mobil ko'rinishi, tema tugmasi, ustozning vazifa berishni bekor qilishi va tasdiqlashi, inglizcha hisob yaratish oynasining asosiy yozuvlari tekshirildi. Ustozning kompyuter ko'rinishi ham tekshirildi. Bu barcha tugmalar yoki barcha tillar to'liq tekshirilganini anglatmaydi.
 - Jonli ikki Netlify API orqali vaqtinchalik yozish va eskirgan yozuvni rad etish tekshirildi; sinov belgilari olib tashlangan. Jonli brauzerda barcha yo'llar tekshirilmagan.
+
+## Tarjima va navigatsiyani qo'shimcha tekshirish
+
+- O'quvchi support, to'lov, coin; ustoz vazifa, davomat, support; admin hisob, guruh va xabar oynalaridagi 126 ta qo'shimcha matn ingliz tiliga o'tkazildi. Ayrim dinamik xabarlar, tugmalar, tasdiqlar va boshqa matnlar hali o'zbekcha bo'lishi mumkin: to'liq tarjima deb hisoblanmaydi.
+- Mahalliy izolyatsiyalangan demo bazada o'zbekcha admin, ustoz va o'quvchining asosiy navigatsiyasi, inglizchada esa admin, ustoz, o'quvchi, ota-ona va yordamchi admin navigatsiyasi ochildi; brauzerda JavaScript xatolari kuzatilmadi. Bu barcha tugmalar, barcha holatlar yoki jonli sayt testi emas.
+- Jonli saytning statik fayllari tekshirildi, lekin ushbu o'zgarishlar jonli brauzerda hali sinovdan o'tmagan. Sinovlar foydalanuvchilarning jonli bazasiga yozmadi.

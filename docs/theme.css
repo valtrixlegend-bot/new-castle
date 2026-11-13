@@ -105,3 +105,8 @@ html[data-theme="dark"] .homework-group { border-color: #3c4350; }
 html[data-theme="dark"] .homework-group summary { background: #273047; }
 html[data-theme="dark"] .homework-group-count { color: #b1bac8; }
 html[data-theme="dark"] .homework-select-all { border-color: #3c4350; }
+
+/* Fit short phone screens instead of forcing a 760px-tall app. */
+#root > .ns-root { min-height: 100vh !important; min-height: 100dvh !important; }
+#root > .ns-root > div.relative { height: 100vh; height: 100dvh; min-height: 0; }
+#root .homework-group summary:focus-visible { outline: 2px solid #779cf3; outline-offset: -2px; }

@@ -47,3 +47,10 @@ Sinovlar mahalliy, alohida demo bazada o'tkazilgan. Internetdagi bazaga sinov ma
 - Bitta oynadagi yozuvlar navbat bilan yuboriladi. Ziddiyat yoki saqlash javobi noaniq bo'lsa, keyingi saqlashlar to'xtatiladi va foydalanuvchiga sahifani yangilash haqida ogohlantirish beriladi. Saqlanmagan o'zgarishlarni yangilashdan keyin qayta kiritish kerak; ular avtomatik birlashtirilmaydi.
 - Mahalliy brauzerda ikki ochiq oyna bilan sinov: birinchi to'lov saqlandi, ikkinchisining eski nusxasi rad etildi va ogohlantirish ko'rsatildi. Barcha 14 pilot login nusxada tekshirildi. Jonli Netlify funksiyasi orqali yozish va ikki foydalanuvchi sinovi hali tekshirilmagan.
 - Bu himoya autentifikatsiya emas: umumiy demo API hali ham hammaga ochiq; haqiqiy shaxsiy ma'lumotlar uchun xavfsiz emas. Muddati tugaganda bazalar avtomatik o'chirilmaydi.
+
+## Frontend bo'yicha qo'shimcha ishlar
+
+- Qisqa telefon ekranida ilova balandligi ekranga moslashtirildi; modal oynalar va guruh tanlash fokus belgisi yaxshilandi.
+- Vazifa berish va yangi hisob yaratishga tasdiqlash qo'shildi. Inglizcha hisob yaratish va vazifa oynalaridagi bir qator asosiy matnlar tarjima qilindi; qolgan sahifalar hali to'liq tarjima qilinmagan.
+- Alohida mahalliy bazada admin, ustoz va o'quvchi mobil ko'rinishi, tema tugmasi, ustozning vazifa berishni bekor qilishi va tasdiqlashi, inglizcha hisob yaratish oynasining asosiy yozuvlari tekshirildi. Ustozning kompyuter ko'rinishi ham tekshirildi. Bu barcha tugmalar yoki barcha tillar to'liq tekshirilganini anglatmaydi.
+- Jonli ikki Netlify API orqali vaqtinchalik yozish va eskirgan yozuvni rad etish tekshirildi; sinov belgilari olib tashlangan. Jonli brauzerda barcha yo'llar tekshirilmagan.
